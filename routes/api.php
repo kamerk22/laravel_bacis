@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::get('/video/{video}', function (App\Video $video) {
+    return $video;
+});
+
+Route::get('/video/{video}/view', function (App\Video $video) {
+    return $video->increment('views');
+});
+
+Route::get('/video/{video}/limit', function (App\Video $video) {
+    return $video->increment('views');
+})->middleware('throttle:5,1,default');
