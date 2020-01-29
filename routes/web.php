@@ -11,20 +11,8 @@
 |
 */
 
-// Welcome Route
-
-// use App\Http\Controllers\WelcomeController;
-
 Route::get('/', 'WelcomeController@view');
 
-Route::get('/single', 'SingleActionController');
-Route::get('/middleware', 'MiddlewareController');
-
-// Better approach
-// Route::get('/', [WelcomeController::class, 'index']);
-
-Route::view('/view', 'welcome');
-
-
-Route::get('video/extra', 'VideoController@extra');
-Route::resource('video', 'VideoController');
+Route::get('user/{id}', 'WelcomeController@user');
+Route::get('license/{id}', 'WelcomeController@license');
+Route::get('phone/{id}', 'WelcomeController@license');
