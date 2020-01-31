@@ -11,8 +11,15 @@
 |
 */
 
+
 Route::get('/', 'WelcomeController@view');
 
 Route::get('user/{id}', 'WelcomeController@user');
 Route::get('license/{id}', 'WelcomeController@license');
 Route::get('phone/{id}', 'WelcomeController@license');
+
+Route::get('/many', 'WelcomeController@manyToMany');
+
+
+Route::get('category/{id}', 'WelcomeController@category');
+Route::get('product/{id}', 'WelcomeController@product');
