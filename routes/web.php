@@ -16,4 +16,8 @@ Route::get('/', 'WelcomeController@view');
 
 Route::get('user/{id}', 'WelcomeController@user');
 
+Route::get('post/{id}', 'WelcomeController@post');
+
 Route::get('country/{id}/posts', 'WelcomeController@countryPosts');
+
+Route::get('comment/{id}', 'WelcomeController@comments');
